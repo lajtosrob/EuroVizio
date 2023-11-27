@@ -56,7 +56,17 @@ namespace EuroVizio
 
         public int pontszam {  get; set; }
 
+        static bool TopLista(Versenyzo sportolo)
+        {
+            bool topListas = false;
 
+                if ((sportolo.pontszam > 150 && sportolo.versenyEve < 2000) || (sportolo.pontszam > 200 && sportolo.versenyEve >= 2000))
+                {
+                    topListas = true;
+                }
+
+            return topListas;
+        }
 
     }
 }

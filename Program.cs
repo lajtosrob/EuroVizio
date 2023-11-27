@@ -25,6 +25,30 @@
 
             Console.WriteLine($"4. feladat: Versenyzők száma: {versenyzok.Count()}");
 
+            // 5. feladat
+
+            Console.WriteLine("5. feladat: Nem magyarországi versenyzők");
+
+            //List<Versenyzo> nemMagyar = versenyzok.Where(x => x.orszag != "Magyarország").ToList();
+
+            versenyzok.Where(x => x.orszag != "Magyarország").ToList().ForEach(x => Console.WriteLine(x.eloadoCime));
+
+
+            // 7. feladat 
+
+            Console.WriteLine("7. feladat: Kéram az országot: ");
+
+            string megadottOrszag =  Console.ReadLine();
+
+            if (versenyzok.Any(y => y.orszag == megadottOrszag))
+            {
+                Console.WriteLine($"Az ország átlagos pontszáma: {Math.Round(versenyzok.Average(x => x.pontszam), 0)}");
+            }
+            else
+            {
+                Console.WriteLine("Nem található ilyen nevű ország");
+            }
+
         }
     }
 }
